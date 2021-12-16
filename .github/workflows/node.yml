@@ -1,0 +1,19 @@
+name: A build for node
+
+on: push
+  branches: [main]
+
+jobs: 
+build:
+   runs-on: macos-latest
+   steps:
+   -uses: actions/checkout@v2
+   -name: Setting up node
+    uses: actions/setup-node@v1
+    with:
+      node-version: '16.x'
+  -name: install dependencies
+    run: npm install
+   -run: npm run build
+   -run: npm test
+   
