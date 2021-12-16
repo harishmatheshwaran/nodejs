@@ -20,6 +20,7 @@ build:
    -name: install dependencies
     run: npm install
   step:
-   -run: npm run build
-   -run: npm test
+    name: ci on building and test
+    run: npm run build
+    run: npm test
    
