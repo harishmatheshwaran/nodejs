@@ -7,18 +7,18 @@ jobs:
   build:
    runs-on: macos-latest
   step:
-   -name: cloning a git repo
+  - name: cloning a git repo
    uses: actions/checkout@v2
   step:
-   -name: Setting up node
-    uses: actions/setup-node@v1
+  - name: Setting up node
+   uses: actions/setup-node@v1
     with:
       node-version: '16.x'
   step:
-   -name: install dependencies
+  - name: install dependencies
     run: npm install
   step:
-    name: ci on building and test
+  - name: ci on building and test
     run: npm run build
     run: npm test
    
