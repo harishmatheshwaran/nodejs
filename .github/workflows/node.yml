@@ -8,14 +8,18 @@ on:
 jobs: 
 build:
    runs-on: macos-latest
-   steps:
-   -uses: actions/checkout@v2
+  step:
+   -name: cloning a git repo
+   uses: actions/checkout@v2
+  step:
    -name: Setting up node
     uses: actions/setup-node@v1
     with:
       node-version: '16.x'
-  -name: install dependencies
+  step:
+   -name: install dependencies
     run: npm install
+  step:
    -run: npm run build
    -run: npm test
    
